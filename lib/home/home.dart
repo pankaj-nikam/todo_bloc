@@ -34,6 +34,18 @@ class HomePage extends StatelessWidget {
                 },
               ));
             }
+            if (state is HomeInitial) {
+              if (state.error != null) {
+                ScaffoldMessenger.of(context).showSnackBar(
+                  SnackBar(
+                    content: Text(
+                      state.error!,
+                      style: TextStyle(color: Theme.of(context).errorColor),
+                    ),
+                  ),
+                );
+              }
+            }
           },
           builder: (context, state) {
             if (state is HomeInitial) {
@@ -48,12 +60,35 @@ class HomePage extends StatelessWidget {
                     decoration: const InputDecoration(labelText: 'Password'),
                     controller: passwordField,
                   ),
-                  ElevatedButton(
-                      onPressed: () {
-                        BlocProvider.of<HomeBloc>(context).add(
-                            LoginEvent(userNameField.text, passwordField.text));
-                      },
-                      child: const Text('Login'))
+                  Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        ElevatedButton(
+                            onPressed: () {
+                              BlocProvider.of<HomeBloc>(context).add(
+                                LoginEvent(
+                                  userNameField.text,
+                                  passwordField.text,
+                                ),
+                              );
+                            },
+                            child: const Text('Login')),
+                        const SizedBox(width: 10),
+                        ElevatedButton(
+                            onPressed: () {
+                              BlocProvider.of<HomeBloc>(context).add(
+                                RegisterAccountEvent(
+                                  userNameField.text,
+                                  passwordField.text,
+                                ),
+                              );
+                            },
+                            child: const Text('Register')),
+                      ],
+                    ),
+                  )
                 ],
               );
             }

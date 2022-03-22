@@ -18,3 +18,13 @@ class RegisterServicesEvent extends HomeEvent {
   @override
   List<Object?> get props => [];
 }
+
+class RegisterAccountEvent extends HomeEvent {
+  final String userName;
+  final String password;
+
+  const RegisterAccountEvent(this.userName, this.password);
+
+  @override
+  List<Object> get props => [userName, password];
+}
