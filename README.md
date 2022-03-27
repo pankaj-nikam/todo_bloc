@@ -1,16 +1,11 @@
-# todo_bloc
+# Todo App with Bloc V8 and Hive
 
-A new Flutter project.
+A simple Todo app which uses [Bloc](<https://pub.dev/packages/flutter_bloc>) V8 to manage state and [Hive](<https://pub.dev/packages/hive_flutter>) to manage storage.
 
-## Getting Started
+Covers the following points:
 
-This project is a starting point for a Flutter application.
+- Login
+- Register
+- Create Todo
 
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
-
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+Coded along with YouTube video: [Part 1](<https://www.youtube.com/watch?v=rMC7o5GRW9E>) and [Part 2](<https://www.youtube.com/watch?v=OsumPhI17AY&t=15s>)
